@@ -1,14 +1,15 @@
 #!/usr/bin/env python
 
-def main(strategy_a, strategy_b, history):
-    '''
-    Always leads with cooperate, then do whatever the opponent
-    did last round
-    '''
+from base import PrisonersDilemmaStrategy
 
-    opposition_strategy = 'strategy_b' if strategy_a == 'strategies.tit_for_tat' else 'strategy_a'
+class TitForTat(PrisonersDilemmaStrategy):
+    def main(self, strategy_a, strategy_b, history):
+        '''
+        Always leads with cooperate, then do whatever the opponent
+        did last round
+        '''
 
-    if len(history) == 0:
-        return True
-    else:
-        return history[len(history) - 1][opposition_strategy]
+        if len(history) == 0:
+            return True
+        else:
+            return history[len(history) - 1][self.opposition_strategy]

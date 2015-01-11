@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-def main(foo, bar, baz):
-    '''
-    Always defects
-    '''
-    return False
+from base import PrisonersDilemmaStrategy
+
+class AlwaysDefect(PrisonersDilemmaStrategy):
+    def main(self, foo, bar, baz):
+        return False
