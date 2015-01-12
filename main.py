@@ -87,7 +87,7 @@ class PrisonersDilemma:
                 'strategy_b_points': b_points
             })
 
-        except AttributeError, NotImplementedError as detail:
+        except (AttributeError, NotImplementedError), detail:
             raise Exception("Could not play this round: " + detail.message)
 
     def report_stats(self):
